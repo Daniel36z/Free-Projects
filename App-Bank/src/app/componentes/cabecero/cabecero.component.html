@@ -1,0 +1,33 @@
+<nav class="bg-dark p-0">
+  <div class="posicionamiento">
+    <div>
+      <a routerLink="/" class="texto_inf">Control clientes</a>
+    </div>
+
+    <div *ngIf="isLoggedIn">
+      <a routerLink="/" class="texto_inf">Inicio</a>
+    </div>
+
+    <div class="texto_inf" *ngIf="isLoggedIn">
+      <i class="fas fa-user" href="#"></i>Welcome: {{ loggedInUser }}
+    </div>
+
+    <div>
+      <a routerLink="/configuracion" class="texto_inf">
+        <i class="fas fa-cog"></i> Configuración
+      </a>
+    </div>
+
+    <div class="texto_inf" *ngIf="!isLoggedIn">
+      <a routerLink="/login" class="nav-link">
+        <i class="fas fa-user"></i> Login
+      </a>
+    </div>
+
+    <div class="texto_inf" *ngIf="isLoggedIn">
+      <a style="cursor: pointer" (click)="logout()" class="nav-link">
+        <i class="fas fa-user-times"></i> Salir
+      </a>
+    </div>
+  </div>
+</nav>
